@@ -26,4 +26,9 @@ public class Acervo {
             System.out.println("Livro não encontrado");
         }
     }
+
+    public static void remover(String titulo){
+        Livro l = buscar(titulo);
+        livros.remove(l);
+    }
 }

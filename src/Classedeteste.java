@@ -1,7 +1,7 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-
 import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 public class Classedeteste {
     @Test
     public void testcadastro() {
@@ -24,5 +24,14 @@ public class Classedeteste {
         Acervo.adicionar(l);
         Acervo.alugar("Frankenstein");
         assertFalse(l.isDisponivel());
+    }
+
+    @Test
+    public void testeremover() {
+        Livro l = new Livro("Frankenstein", "Mary Shelly",true);
+        Acervo.adicionar(l);
+        Acervo.remover("Frankenstein");
+        Livro l2 = Acervo.buscar("Frankenstein");
+        assertNull(l2);
     }
 }
